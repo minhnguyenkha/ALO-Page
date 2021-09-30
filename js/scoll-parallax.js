@@ -56,18 +56,42 @@ setTimeout(() => {
                 
                 showBigNewsPhone();
                 bigNewsPhone.addEventListener('animationend', function(){
-                    console.log(bigNewsPhone);
-                    showThinner();
-                    showSmaller();
-                    showLighter();
+                            textThinner.classList.remove('hide');
+                            textThinner.classList.add('wow', `${animated2}`, 'animate__fadeInUp');
+                            textSmaller.classList.remove('hide');
+                            textSmaller.classList.add('wow', `${animated2}`, 'animate__fadeInUp', 'animate__delay-1s');
+                            textLighter.classList.remove('hide');
+                            textLighter.classList.add('wow', `${animated2}`, 'animate__fadeInUp', 'animate__delay-1s');  
+                    
+                    
+//                     showThinner();
+//                     showSmaller();
+//                     showLighter();
                     
                     textLighter.addEventListener('animationend', function(){
                         
                         hideBigNewsPhone();
-    
-                        hideThinner();
-                        hideSmaller();
-                        hideLighter();
+                        
+                        textThinner.classList.add('wow', `${animated2}`, 'animate__fadeOutLeftBig');
+                            setTimeout(() => {
+                                textThinner.style.visibility = 'hidden'; 
+                            }, 100);
+                        
+                        
+                         textSmaller.classList.add('wow', `${animated2}`, 'animate__fadeOutLeftBig');
+                            setTimeout(() => {
+                                textSmaller.style.visibility = 'hidden'; 
+                                textSmaller.style.overflow = 'hidden';
+                            }, 100);
+                        
+                        textLighter.classList.add('wow', `${animated2}`, 'animate__fadeOutLeftBig');
+                            setTimeout(() => {
+                                textLighter.style.visibility = 'hidden'; 
+                            }, 100);
+                        
+//                         hideThinner();
+//                         hideSmaller();
+//                         hideLighter();
     
                         setTimeout(() => {
                             bigNewsSub.style.visibility = 'visible';
