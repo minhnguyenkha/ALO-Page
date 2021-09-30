@@ -55,11 +55,18 @@ setTimeout(() => {
                 contentPhone.classList.add('wow', `${animated2}`, 'animate__fadeInUp');
                 
                 showBigNewsPhone();
-    
                 bigNewsPhone.addEventListener('animationend', function(){
-                    showThinner();
-                    showSmaller();
-                    showLighter();
+                            textThinner.classList.remove('hide');
+                            textThinner.classList.add('wow', `${animated2}`, 'animate__fadeInUp');
+                            textSmaller.classList.remove('hide');
+                            textSmaller.classList.add('wow', `${animated2}`, 'animate__fadeInUp', 'animate__delay-1s');
+                            textLighter.classList.remove('hide');
+                            textLighter.classList.add('wow', `${animated2}`, 'animate__fadeInUp', 'animate__delay-1s');  
+                    
+                    
+//                     showThinner();
+//                     showSmaller();
+//                     showLighter();
                     
                     textLighter.addEventListener('animationend', function(){
                         
