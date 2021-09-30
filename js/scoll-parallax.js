@@ -55,7 +55,7 @@ setTimeout(() => {
                 contentPhone.classList.add('wow', `${animated2}`, 'animate__fadeInUp');
                 
                 showBigNewsPhone();
-    
+                console.log(bigNewsPhone);
                 bigNewsPhone.addEventListener('animationend', function(){
                     showThinner();
                     showSmaller();
