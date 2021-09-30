@@ -1,1 +1,314 @@
-var xBTn=document.querySelector(".assistant-wrap .assistant i");function showTextModal(){var t=document.createElement("div");t.classList.add("message-md"),t.innerHTML='<div class="ms-icon">\n    <i class="fa fa-times"></i>\n</div>\n<p>\n    Đừng bỏ lỡ ưu đãi hấp dẫn nhất\n    Nhận tư vấn ngay!</p>',document.querySelector("body").appendChild(t),document.querySelector(".ms-icon").addEventListener("click",function(){t.remove()})}function hideAssistant(){var t=document.querySelector(".assistant-wrap");t.classList.contains("show")&&t.classList.remove("show")}function showAssistant(){document.querySelector(".assistant-wrap").classList.add("show")}xBTn.addEventListener("click",hideAssistant),setTimeout(()=>{showAssistant(),showTextModal()},1e3);var dotsVerticalBtn=document.querySelector(".dots-vetical-btn"),exitChatBoxBtn=document.querySelector(".exit-chatbox-btn"),imgBot=document.querySelector(".assistant");function showText(t){t.preventDefault(),document.querySelector(".show-text").classList.toggle("show")}function hideChatBox(t){t.preventDefault(),document.querySelector(".chatbox").classList.remove("show")}function showChatBox(t){document.querySelector(".chatbox").classList.add("show")}function setTime(t){let n=new Date;return t.innerText=`${n.getHours()}g:${n.getMinutes()}p`,t}dotsVerticalBtn.addEventListener("click",this.showText),exitChatBoxBtn.addEventListener("click",hideChatBox),imgBot.addEventListener("click",showChatBox);var userContent=document.querySelector(".user-bot__content-title"),botBtn=document.querySelectorAll(".ass-bot__content__btn"),botBtnLength=botBtn.length;const botButtonWrap=document.createElement("div");botButtonWrap.classList.add("assistant-bot__content__btn");const chatBotContent=document.querySelector(".chatbox__content"),assistantContentWrap=document.createElement("div");assistantContentWrap.classList.add("assistant-bot__wrap");const assistantContent=document.createElement("div");assistantContent.classList.add("assistant-bot");const assistantMessageContent=document.createElement("div");assistantMessageContent.classList.add("assistant-bot__content__wrap");const assistantIconContent=document.createElement("div");assistantIconContent.classList.add("assistant-bot__icon__wrap");const iconContent=document.createElement("div");iconContent.classList.add("bot-icon");const icon=document.createElement("i");icon.classList.add("fa","fa-user");const Message=document.createElement("div");Message.classList.add("assistant-bot__content");const messageContent=document.createElement("div");messageContent.classList.add("assistant-bot__content__text");const currentTime=document.createElement("span");currentTime.classList.add("current__time"),setTime(currentTime);const para=document.createElement("p"),botChatting=function(){var t,n=new Date;function e(e){var s=document.querySelector(".chatbox__content"),a=document.createElement("div");a.classList.add("user-bot__wrap"),t=e.target.innerText;var o=function(t,n){var e=document.createElement("div");return e.classList.add("user-bot"),e.innerHTML=`<div class="user-bot__content">\n                                    <span class="current__time">${t}</span>\n                                    <div class="user-bot__content-title">\n                                        <div class="content__btn__text">\n                                            <span>${n}.</span>\n                                        </div>\n                                    </div>\n                                </div>\n                                <div class="user-icon">\n                                    <div class="user">\n                                        <i class="fa fa-user"></i>\n                                    </div>\n                                </div>\n                                `,e}(`${n.getHours()}g:${n.getMinutes()}p`,t);a.appendChild(o),s.appendChild(a)}function s(s){var o,i=s.target.attributes.length,c=s.target.attributes;for(let t=0;t<i;t++){var r;if(a((o=c[t]).nodeName)){var d=document.createElement("a");d.classList.add("ass-bot__content__btn","this-button"),d.innerHTML=`${o.value}`,r=d,botButtonWrap.appendChild(r)}}var u=function(t,n){switch(t){case"Sản phẩm mới nhất":case"Xem tất cả sản phẩm":return n.innerHTML+="Emma gợi ý bạn hai lựa chọn !",n;case"So sánh các sản phẩm":case"Xem sản phẩm mới nhất":return n.innerHTML+="Emma đề xuất bạn !",n;case"Ai biết":return n.innerHTML+="Emma đang lớn !",n}}(o.value,para);function l(){var t=document.querySelector(".chatbox__content"),e=document.createElement("div");e.classList.add("assistant-bot__wrap");var s=function(t){var n=document.createElement("div");return n.classList.add("assistant-bot"),n.innerHTML=`<div class="assistant-bot">\n                        <div class="assistant-bot__icon__wrap">\n                            <div class="bot-icon">\n                                <i class="fa fa-user"></i>\n                            </div>\n                        </div>\n                        <div class="assistant-bot__content__wrap">\n                            <div class="user-bot__content-title">\n                                <div class="content__btn__text">\n                                    <span>Đợi Emma trong giây lát...!.</span>\n                                </div>\n                            </div>\n                            <span class="current__time">${t}</span>\n                        </div>\n                    </div>`,n}(`${n.getHours()}g:${n.getMinutes()}p`);e.appendChild(s),t.appendChild(e)}para.innerHTML=u.innerText,messageContent.innerHTML=para.outerHTML,iconContent.innerHTML=icon.outerHTML,assistantIconContent.innerHTML=iconContent.outerHTML,Message.innerHTML=messageContent.outerHTML+botButtonWrap.outerHTML,assistantMessageContent.innerHTML=Message.outerHTML+currentTime.outerHTML,assistantContent.innerHTML=assistantIconContent.outerHTML+assistantMessageContent.outerHTML,assistantContentWrap.innerHTML=assistantContent.outerHTML,chatBotContent.insertAdjacentHTML("beforeend",assistantContentWrap.outerHTML),function(t){switch(t){case"Mua sản phẩm":case"Tư vấn sản phẩm":!function(){for(var t=document.querySelvar xBTn=document.querySelector(".assistant-wrap .assistant i");function showTextModal(){var t=document.createElement("div");t.classList.add("message-md"),t.innerHTML='<div class="ms-icon">\n    <i class="fa fa-times"></i>\n</div>\n<p>\n    Đừng bỏ lỡ ưu đãi hấp dẫn nhất\n    Nhận tư vấn ngay!</p>',document.querySelector("body").appendChild(t),document.querySelector(".ms-icon").addEventListener("click",function(){t.remove()})}function hideAssistant(){var t=document.querySelector(".assistant-wrap");t.classList.contains("show")&&t.classList.remove("show")}function showAssistant(){document.querySelector(".assistant-wrap").classList.add("show")}xBTn.addEventListener("click",hideAssistant),setTimeout(()=>{showAssistant(),showTextModal()},1e3);var dotsVerticalBtn=document.querySelector(".dots-vetical-btn"),exitChatBoxBtn=document.querySelector(".exit-chatbox-btn"),imgBot=document.querySelector(".assistant");function showText(t){t.preventDefault(),document.querySelector(".show-text").classList.toggle("show")}function hideChatBox(t){t.preventDefault(),document.querySelector(".chatbox").classList.remove("show")}function showChatBox(t){document.querySelector(".chatbox").classList.add("show")}function setTime(t){let e=new Date;return t.innerText=`${e.getHours()}g:${e.getMinutes()}p`,t}dotsVerticalBtn.addEventListener("click",this.showText),exitChatBoxBtn.addEventListener("click",hideChatBox),imgBot.addEventListener("click",showChatBox);var userContent=document.querySelector(".user-bot__content-title"),botBtn=document.querySelectorAll(".ass-bot__content__btn"),botBtnLength=botBtn.length;const botButtonWrap=document.createElement("div");botButtonWrap.classList.add("assistant-bot__content__btn");const chatBotContent=document.querySelector(".chatbox__content"),assistantContentWrap=document.createElement("div");assistantContentWrap.classList.add("assistant-bot__wrap");const assistantContent=document.createElement("div");assistantContent.classList.add("assistant-bot");const assistantMessageContent=document.createElement("div");assistantMessageContent.classList.add("assistant-bot__content__wrap");const assistantIconContent=document.createElement("div");assistantIconContent.classList.add("assistant-bot__icon__wrap");const iconContent=document.createElement("div");iconContent.classList.add("bot-icon");const icon=document.createElement("i");icon.classList.add("fa","fa-user");const Message=document.createElement("div");Message.classList.add("assistant-bot__content");const messageContent=document.createElement("div");messageContent.classList.add("assistant-bot__content__text");const currentTime=document.createElement("span");currentTime.classList.add("current__time"),setTime(currentTime);const para=document.createElement("p"),botChatting=function(){var t,e=new Date;function n(n){var s=document.querySelector(".chatbox__content"),a=document.createElement("div");a.classList.add("user-bot__wrap"),t=n.target.innerText;var o=function(t,e){var n=document.createElement("div");return n.classList.add("user-bot"),n.innerHTML=`<div class="user-bot__content">\n                                    <span class="current__time">${t}</span>\n                                    <div class="user-bot__content-title">\n                                        <div class="content__btn__text">\n                                            <span>${e}.</span>\n                                        </div>\n                                    </div>\n                                </div>\n                                <div class="user-icon">\n                                    <div class="user">\n                                        <i class="fa fa-user"></i>\n                                    </div>\n                                </div>\n                                `,n}(`${e.getHours()}g:${e.getMinutes()}p`,t);a.appendChild(o),s.appendChild(a)}function s(s){var o,i=s.target.attributes.length,c=s.target.attributes;for(let t=0;t<i;t++){var r;if(a((o=c[t]).nodeName)){var d=document.createElement("a");d.classList.add("ass-bot__content__btn","this-button"),d.innerHTML=`${o.value}`,r=d,botButtonWrap.appendChild(r)}}var u=function(t,e){switch(t){case"Sản phẩm mới nhất":case"Xem tất cả sản phẩm":return e.innerHTML+="Emma gợi ý bạn hai lựa chọn !",e;case"So sánh các sản phẩm":case"Xem sản phẩm mới nhất":return e.innerHTML+="Emma đề xuất bạn !",e;case"Ai biết":return e.innerHTML+="Emma đang lớn !",e}}(o.value,para);function l(){var t=document.querySelector(".chatbox__content"),n=document.createElement("div");n.classList.add("assistant-bot__wrap");var s=function(t){var e=document.createElement("div");return e.classList.add("assistant-bot"),e.innerHTML=`<div class="assistant-bot">\n                        <div class="assistant-bot__icon__wrap">\n                            <div class="bot-icon">\n                                <i class="fa fa-user"></i>\n                            </div>\n                        </div>\n                        <div class="assistant-bot__content__wrap">\n                            <div class="user-bot__content-title">\n                                <div class="content__btn__text">\n                                    <span>Đợi Emma trong giây lát...!.</span>\n                                </div>\n                            </div>\n                            <span class="current__time">${t}</span>\n                        </div>\n                    </div>`,e}(`${e.getHours()}g:${e.getMinutes()}p`);n.appendChild(s),t.appendChild(n)}para.innerHTML=u.innerText,messageContent.innerHTML=para.outerHTML,iconContent.innerHTML=icon.outerHTML,assistantIconContent.innerHTML=iconContent.outerHTML,Message.innerHTML=messageContent.outerHTML+botButtonWrap.outerHTML,assistantMessageContent.innerHTML=Message.outerHTML+currentTime.outerHTML,assistantContent.innerHTML=assistantIconContent.outerHTML+assistantMessageContent.outerHTML,assistantContentWrap.innerHTML=assistantContent.outerHTML,chatBotContent.insertAdjacentHTML("beforeend",assistantContentWrap.outerHTML),function(t){switch(t){case"Mua sản phẩm":!function(){const t=["index5.html","index2-phone1.html"];for(var e=document.querySelectorAll(".this-button"),s=0;s<e.length;s++)e[s].onclick=function(t){n(t),l()},e[s].setAttribute("href",t[s]),e[s].setAttribute("target","_blank")}();break;case"Tư vấn sản phẩm":!function(){const t=["index5.html","compare-page.html"];for(var e=document.querySelectorAll(".this-button"),s=0;s<e.length;s++)e[s].onclick=function(t){n(t),l()},e[s].setAttribute("href",t[s]),e[s].setAttribute("target","_blank")}();break;case"Hổ trợ kỹ thuật":alert("emma đang lớn")}}(t)}function a(t){if(t.indexOf("data-")>-1)return!0}setTime(document.querySelector(".current__time")),document.querySelector(".current__date").innerText=`Th ${e.getDay()}, ${e.getDate()} thg ${e.getMonth()}`,function(t){var e=t.length;for(let a=0;a<e;a++)t[a].addEventListener("click",t=>{n(t),s(t)})}(botBtn)};botChatting();ectorAll(".this-button"),n=0;n<t.length;n++)t[n].onclick=function(t){e(t),l()},t[n].setAttribute("href",link[n]),t[n].setAttribute("target","_blank")}();break;case"Hổ trợ kỹ thuật":alert("emma đang lớn")}}(t)}function a(t){if(t.indexOf("data-")>-1)return!0}setTime(document.querySelector(".current__time")),document.querySelector(".current__date").innerText=`Th ${n.getDay()}, ${n.getDate()} thg ${n.getMonth()}`,function(t){var n=t.length;for(let a=0;a<n;a++)t[a].addEventListener("click",t=>{e(t),s(t)})}(botBtn)};botChatting();
+
+
+
+
+
+var xBTn = document.querySelector('.assistant-wrap .assistant i');
+
+xBTn.addEventListener('click', hideAssistant);
+setTimeout(() => {
+    showAssistant(); 
+    showTextModal();
+}, 1000);
+
+
+function showTextModal(){
+    var modal = document.createElement('div');
+    modal.classList.add('message-md');
+    modal.innerHTML = `<div class="ms-icon">
+    <i class="fa fa-times"></i>
+</div>
+<p>
+    Đừng bỏ lỡ ưu đãi hấp dẫn nhất
+    Nhận tư vấn ngay!</p>`;
+    document.querySelector('body').appendChild(modal);
+    document.querySelector('.ms-icon').addEventListener('click', function(){
+        modal.remove();
+    })
+}
+
+function hideAssistant(){
+    var assistant = document.querySelector('.assistant-wrap');
+    if (assistant.classList.contains('show'))
+        assistant.classList.remove('show');
+}
+function showAssistant(){
+    var assistant = document.querySelector('.assistant-wrap');
+    assistant.classList.add('show');
+}
+
+
+var dotsVerticalBtn = document.querySelector('.dots-vetical-btn');
+var exitChatBoxBtn = document.querySelector('.exit-chatbox-btn');
+var imgBot = document.querySelector('.assistant');
+dotsVerticalBtn.addEventListener('click', this.showText);
+// dotsVerticalBtn.addEventListener('mouseenter', this.showText);
+// dotsVerticalBtn.addEventListener('mouseleave', this.hideText);
+
+exitChatBoxBtn.addEventListener('click', hideChatBox);
+imgBot.addEventListener('click', showChatBox);
+
+function showText(e){
+    e.preventDefault();
+    var text = document.querySelector('.show-text');
+    text.classList.toggle('show');
+}
+
+
+function hideChatBox(e){
+    e.preventDefault();
+    var chatBox = document.querySelector('.chatbox');
+    chatBox.classList.remove('show');
+}
+function showChatBox(e){
+    var chatBox = document.querySelector('.chatbox');
+    chatBox.classList.add('show');
+}
+
+
+
+
+
+
+
+
+function setTime(spanTime){
+    let today = new Date();
+    spanTime.innerText =`${today.getHours()}g:${today.getMinutes()}p`;
+    return spanTime;
+}
+
+var userContent = document.querySelector('.user-bot__content-title');
+var botBtn = document.querySelectorAll('.ass-bot__content__btn');
+var botBtnLength = botBtn.length;
+
+/*declare*/
+    const botButtonWrap = document.createElement('div');
+    botButtonWrap.classList.add(`assistant-bot__content__btn`);
+    const chatBotContent = document.querySelector('.chatbox__content');
+    const assistantContentWrap = document.createElement('div');
+        assistantContentWrap.classList.add(`assistant-bot__wrap`);
+    const assistantContent = document.createElement('div');
+        assistantContent.classList.add(`assistant-bot`);
+    const assistantMessageContent = document.createElement('div');
+        assistantMessageContent.classList.add( `assistant-bot__content__wrap`);
+    const assistantIconContent = document.createElement('div');
+        assistantIconContent.classList.add( `assistant-bot__icon__wrap`);
+    const iconContent = document.createElement('div');
+        iconContent.classList.add(`bot-icon`);
+    const icon = document.createElement('i');
+        icon.classList.add(`fa`, `fa-user`);
+    const Message = document.createElement('div');
+        Message.classList.add(`assistant-bot__content`);
+    const messageContent = document.createElement('div');
+        messageContent.classList.add(`assistant-bot__content__text`);
+    const currentTime = document.createElement('span');
+        currentTime.classList.add(`current__time`);
+        setTime(currentTime);
+    const para = document.createElement('p');
+
+
+const botChatting = function(){
+    var today = new Date();
+    function showDate(){
+        var spanDate = document.querySelector('.current__date');
+        spanDate.innerText = `Th ${today.getDay()}, ${today.getDate()} thg ${today.getMonth()}`;
+    }
+    var spanTime = document.querySelector('.current__time');
+    setTime(spanTime);
+    showDate();
+
+
+    function botCLickBtn(allBtn){
+        var btnLength = allBtn.length;
+        for(let s = 0; s < btnLength; s++){
+            allBtn[s].addEventListener('click', e =>{
+                userBotShow(e);
+                ownBotShow(e);
+            })
+        }
+    }
+    botCLickBtn(botBtn);
+
+    var contentText;
+    function userBotShow(e){
+            /*to push text content*/
+        var chatBotContent = document.querySelector('.chatbox__content');
+        var divWrap = document.createElement('div');
+        divWrap.classList.add(`user-bot__wrap`);
+        contentText = e.target.innerText;
+        var time = `${today.getHours()}g:${today.getMinutes()}p`;
+        var showText = createText(time, contentText);
+        divWrap.appendChild(showText);
+        chatBotContent.appendChild(divWrap);
+    }
+    
+        function createText(time, content){
+            var newDiv = document.createElement('div');
+            newDiv.classList.add(`user-bot`);
+            newDiv.innerHTML = `<div class="user-bot__content">
+                                    <span class="current__time">${time}</span>
+                                    <div class="user-bot__content-title">
+                                        <div class="content__btn__text">
+                                            <span>${content}.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="user-icon">
+                                    <div class="user">
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                </div>
+                                `;
+            return newDiv;
+        }
+
+
+    function ownBotShow(e){
+        var contentLength = e.target.attributes.length;
+        var content = e.target.attributes;
+    
+        var attr;
+        /*to create button*/
+        for(let c = 0; c < contentLength; c++){
+            attr = content[c];
+            var zxc;
+            if(checkDataAttr(attr.nodeName)){
+                var botBtn = document.createElement('a');
+                botBtn.classList.add(`ass-bot__content__btn`, 'this-button');
+                botBtn.innerHTML = `${attr.value}`;
+                zxc = botBtn;
+                botButtonWrap.appendChild(zxc);
+            }
+        }
+    
+    
+    
+        var at = attr.value;
+        var texT = text(at, para);
+        para.innerHTML = texT.innerText;
+        messageContent.innerHTML = para.outerHTML;
+        iconContent.innerHTML = icon.outerHTML;
+        assistantIconContent.innerHTML = iconContent.outerHTML;
+        Message.innerHTML = messageContent.outerHTML + botButtonWrap.outerHTML;
+        assistantMessageContent.innerHTML = Message.outerHTML + currentTime.outerHTML;
+        assistantContent.innerHTML = assistantIconContent.outerHTML + assistantMessageContent.outerHTML;
+        assistantContentWrap.innerHTML = assistantContent.outerHTML;
+    
+    
+    
+        chatBotContent.insertAdjacentHTML('beforeend', assistantContentWrap.outerHTML);
+        // chatBotContent.appendChild(assistantContentWrap);
+        
+        activeButtonCTA(contentText);
+
+
+        function activeButtonCTA(userText){
+            switch(userText){
+                case 'Mua sản phẩm':
+                    activeButtonThis();
+                    break;
+                case 'Tư vấn sản phẩm':
+                    activeButtonThis2();
+                    break;
+                case 'Hổ trợ kỹ thuật':
+                    activeButtonThis3();
+                    break;
+                default:
+                    break;
+            }
+        }
+            function activeButtonThis(){
+                const link = ['index5.html', 'index2-phone1.html'];
+                var button = document.querySelectorAll('.this-button');
+                for(var i = 0; i < button.length; i++){
+                    button[i].onclick = function(e){
+                        userBotShow(e);
+                        ownTextShow();
+                    }
+                    button[i].setAttribute('href', link[i]);
+                    button[i].setAttribute('target', '_blank');
+                }
+            }
+            function activeButtonThis2(){
+                const link = ['index5.html', 'compare-page.html'];
+                var button = document.querySelectorAll('.this-button');
+                for(var i = 0; i < button.length; i++){
+                    button[i].onclick = function(e){
+                        userBotShow(e);
+                        ownTextShow();
+                    }
+                    button[i].setAttribute('href', link[i]);
+                    button[i].setAttribute('target', '_blank');
+                }
+            }
+            function activeButtonThis3(){
+                alert('emma đang lớn');
+            }
+
+                function ownTextShow(){
+                    var chatBotContent = document.querySelector('.chatbox__content');
+                    var divWrap = document.createElement('div');
+                    divWrap.classList.add(`assistant-bot__wrap`);
+                    var time = `${today.getHours()}g:${today.getMinutes()}p`;
+                    var showText = createOwnText(time);
+                    divWrap.appendChild(showText);
+                    chatBotContent.appendChild(divWrap);
+                }
+                function createOwnText(time){
+                    var newDiv = document.createElement('div');
+                    newDiv.classList.add(`assistant-bot`);
+                    newDiv.innerHTML = 
+                    `<div class="assistant-bot">
+                        <div class="assistant-bot__icon__wrap">
+                            <div class="bot-icon">
+                                <i class="fa fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="assistant-bot__content__wrap">
+                            <div class="user-bot__content-title">
+                                <div class="content__btn__text">
+                                    <span>Đợi Emma trong giây lát...!.</span>
+                                </div>
+                            </div>
+                            <span class="current__time">${time}</span>
+                        </div>
+                    </div>`;
+                    return newDiv;
+                }
+        
+        
+
+
+    }
+        function checkDataAttr(dataAttr){
+            if(dataAttr.indexOf('data-') > -1){
+                return true;
+            }
+        }
+        function text(name, para){
+            switch(name){
+                case 'Sản phẩm mới nhất':
+                case 'Xem tất cả sản phẩm':
+                    para.innerHTML += `Emma gợi ý bạn hai lựa chọn !`;
+                    return para;
+                    break;
+                case 'So sánh các sản phẩm':
+                case 'Xem sản phẩm mới nhất':
+                    para.innerHTML += `Emma đề xuất bạn !`;
+                    return para;
+                    break;
+                case 'Ai biết':
+                    para.innerHTML += `Emma đang lớn !`;
+                    return para;
+                    break;
+                default:
+                    break;
+            }
+        }
+        
+};
+
+
+botChatting();
+
