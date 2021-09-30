@@ -30,9 +30,9 @@ var title3 = document.querySelector('.svp-title3');
 
 
 bigNewsSub.style.visibility = 'hidden';
-textThinner.classList.add('hide');
-textSmaller.classList.add('hide');
-textLighter.classList.add('hide');
+textThinner.style.visibility = "hidden";
+textSmaller.style.visibility = "hidden";
+textLighter.style.visibility = "hidden";
 
 const animated2 = 'animate__animated';
 
@@ -68,14 +68,14 @@ setTimeout(() => {
                         hideThinner();
                         hideSmaller();
                         hideLighter();
-    
-                        setTimeout(() => {
+                        
+
+                         setTimeout(() => {
                             bigNewsSub.style.visibility = 'visible';
                             showFrontPhone();
                             showInchText();
                             showInchSubText();
-                        }, 500);
-    
+                         }, 1100);                       
                     })
                 })
                 wow = new WOW(
@@ -143,41 +143,34 @@ function showBigNewsPhone(){
     bigNewsPhone.classList.add('wow', `${animated2}`, 'animate__fadeInUp', 'animate__fast');
 }
 function hideBigNewsPhone(){
+    bigNewsPhone.style.visibility = 'hidden'; 
     bigNewsPhone.classList.add('wow', `${animated2}`, 'animate__fadeOutRightBig', 'animate__fast');
-    setTimeout(() => {
-        bigNewsPhone.style.visibility = 'hidden'; 
-    }, 500);
 }
 function showThinner(){
-    textThinner.classList.remove('hide');
+    textThinner.style.visibility = "visible";
     textThinner.classList.add('wow', `${animated2}`, 'animate__fadeInUp');
 }
 function hideThinner(){
     textThinner.classList.add('wow', `${animated2}`, 'animate__fadeOutLeftBig');
-    setTimeout(() => {
-        textThinner.style.visibility = 'hidden'; 
-    }, 100);
+    textThinner.addEventListener('animationend', function(){textThinner.style.visibility = 'hidden';})
 }
-function showSmaller(){
-    textSmaller.classList.remove('hide');
+function showSmaller(){  
+    textSmaller.style.visibility = "visible";
     textSmaller.classList.add('wow', `${animated2}`, 'animate__fadeInUp', 'animate__delay-1s');
 }
 function hideSmaller(){
     textSmaller.classList.add('wow', `${animated2}`, 'animate__fadeOutLeftBig');
-    setTimeout(() => {
-        textSmaller.style.visibility = 'hidden'; 
-        textSmaller.style.overflow = 'hidden';
-    }, 100);
+    textSmaller.addEventListener('animationend', function(){textSmaller.style.visibility = 'hidden'; })
 }
 function showLighter(){
-    textLighter.classList.remove('hide');
+    textLighter.style.visibility = "visible";
     textLighter.classList.add('wow', `${animated2}`, 'animate__fadeInUp', 'animate__delay-1s');  
 }
-function hideLighter(){
+function hideLighter(){     
     textLighter.classList.add('wow', `${animated2}`, 'animate__fadeOutLeftBig');
-    setTimeout(() => {
-        textLighter.style.visibility = 'hidden'; 
-    }, 100);
+    textLighter.addEventListener('animationend', function(){
+        textLighter.style.visibility = 'hidden';
+    })
 }
 
 
