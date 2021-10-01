@@ -1,1 +1,17 @@
-let crr__Scroll=0;window.addEventListener("scroll",()=>{var e=document.querySelector(".scrollToTop"),c=(window.document.documentElement.scrollHeight,window.pageYOffset||document.documentElement.scrollTop);c>crr__Scroll?e.classList.remove("active"):e.classList.add("active"),crr__Scroll=c});
+
+
+// console.log(footerSize.getBoundingClientRect);
+
+
+var crr__Scroll = 0;
+
+window.addEventListener('scroll', function() {
+    var scrollToTopBtn = document.querySelector('.scrollToTop');
+    var ScrollDown = document.documentElement.scrollTop;
+    if(ScrollDown > crr__Scroll){
+        scrollToTopBtn.classList.remove('active');
+    }else{
+        scrollToTopBtn.classList.add('active');
+    }
+    crr__Scroll = ScrollDown;
+})

@@ -1,12 +1,170 @@
-var barBtn=document.querySelector('.sale-banner_wrap');var bannerSaleBtn=document.querySelector('.sale-banner__btn button i');var simpleBanner=document.querySelector('.sale-banner__simple-wrap');var detailBanner=document.querySelector('.sale-banner__detail-wrap');var subDetail=document.querySelector('.sale-banner__detail');barBtn.addEventListener('click',showDown);function showDown(e){if(detailBanner.classList.contains('show')&&simpleBanner.classList.contains('hide')){detailBanner.classList.remove('show');simpleBanner.classList.remove('hide');subDetail.classList.remove('show')}else{detailBanner.classList.add('show');subDetail.classList.add('show');simpleBanner.classList.add('hide')}
-clearTimeout}
-var supportBtn=document.querySelectorAll('.support__btn');var supportBtnLength=supportBtn.length;var supportContentShow=document.querySelector('.sp-content');var policyContentShow=document.querySelector('.policy-content');for(let i=0;i<supportBtnLength;i++){supportBtn[i].addEventListener('click',dropDown)}
-function dropDown(e){var targetBtn=e.target.parentElement;if(targetBtn.classList.contains('sp-btn')){if(supportContentShow.classList.contains('show')){supportContentShow.classList.remove('show')}else{supportContentShow.classList.add('show')}}else{if(policyContentShow.classList.contains('show')){policyContentShow.classList.remove('show')}else{policyContentShow.classList.add('show')}}}
-const price={camera:{cam:['32MP','16MP'],price:[20000000,10000000],},connect:{cnt:['4G','5G'],price:[10000000,15000000],},ram:{rm:['4GB','8GB','16GB'],price:[10000000,15000000,20000000],}}
-var checkBoxCamera=document.querySelectorAll('.selc input');var fieldSetCamera=document.querySelector('.sub-in4__list-detail li .camera');var checkBoxRam=document.querySelectorAll('.ram input');var fieldSetRam=document.querySelector('.sub-in4__list-detail li .ram');var checkBoxConnect=document.querySelectorAll('.connect input');var fieldSetConnect=document.querySelector('.sub-in4__list-detail li .connect');showValueChecked(fieldSetCamera,checkBoxCamera);showValueChecked(fieldSetRam,checkBoxRam);showValueChecked(fieldSetConnect,checkBoxConnect);function showValueChecked(field,checkBoxItems){for(var i=0;i<checkBoxItems.length;i++){checkBoxItems[i].onclick=function(e){var value=e.target.value;field.innerHTML=value}}}
-var payField=document.querySelector('.sub-in4__wrap');var buyButton=payField.querySelector('.sub-in4__btn .sw2dz');var infoPhone=payField.querySelector('.sub-in4__title');buyButton.onclick=function(e){e.preventDefault();var struct=getStruct(e,infoPhone);var modal=createModal(struct);document.querySelector('body').appendChild(modal);var statusNote=document.querySelector('.status b');var bg=document.querySelector('.bg1');bg.classList.add('show');setTimeout(()=>{statusNote.classList.add('animate__pulse');statusNote.style.color="#00d400"},500);activeButton(modal)}
-function getStruct(e,infoPhone){var name=infoPhone.querySelector('h3').innerHTML;var ram=infoPhone.querySelector('ul li span.ram').innerHTML;var camera=infoPhone.querySelector('ul li span.camera').innerHTML;var connect=infoPhone.querySelector('ul li span.connect').innerHTML;var price=document.getElementById('wq').innerHTML;var time=new Date();var day=time.getDate();var month=time.getMonth();var year=time.getFullYear();var hour=time.getHours();var minutes=time.getMinutes();return{Phone:name,Ram:ram,Camera:camera,Connect:connect,Price:price,Time:{d:day,m:month,y:year,t:{h:hour,m:minutes,}},}}
-function createModal(struct){var div=document.createElement('div');div.classList.add('pay-modal');div.innerHTML=`<nav class="pd-navbar">
+
+
+var barBtn = document.querySelector('.sale-banner_wrap');
+var bannerSaleBtn = document.querySelector('.sale-banner__btn button i');
+var simpleBanner = document.querySelector('.sale-banner__simple-wrap');
+var detailBanner = document.querySelector('.sale-banner__detail-wrap');
+var subDetail = document.querySelector('.sale-banner__detail');
+barBtn.addEventListener('click', showDown);
+
+function showDown(e){
+    if(detailBanner.classList.contains('show') && simpleBanner.classList.contains('hide')){
+        detailBanner.classList.remove('show'); 
+        simpleBanner.classList.remove('hide');
+        subDetail.classList.remove('show');
+    }else{
+        // setTimeout(() => {
+        //     detailBanner.classList.add('show'); 
+        // }, 60);
+        // setTimeout(() => {
+        //     subDetail.classList.add('show');
+        // }, 55);
+        // setTimeout(() => {
+        //     simpleBanner.classList.add('hide');
+        // }, 40);
+        detailBanner.classList.add('show');
+        subDetail.classList.add('show');
+        simpleBanner.classList.add('hide');
+    }
+    clearTimeout;   
+}
+
+
+var supportBtn = document.querySelectorAll('.support__btn');
+var supportBtnLength = supportBtn.length;
+var supportContentShow = document.querySelector('.sp-content');
+var policyContentShow = document.querySelector('.policy-content');
+for(let i = 0; i < supportBtnLength; i++){
+    supportBtn[i].addEventListener('click', dropDown);
+}
+
+
+function dropDown(e){
+    var targetBtn = e.target.parentElement;
+    if(targetBtn.classList.contains('sp-btn')){
+        if(supportContentShow.classList.contains('show')){
+            supportContentShow.classList.remove('show');
+        }else{
+            supportContentShow.classList.add('show');
+        }
+    }else{
+        if(policyContentShow.classList.contains('show')){
+            policyContentShow.classList.remove('show');
+        }else{
+            policyContentShow.classList.add('show');
+        }
+    }
+    
+}
+
+
+
+const price = {
+    camera: {
+        cam: ['32MP', '16MP'],
+        price: [20000000,10000000],
+    },
+    connect: {
+        cnt: ['4G', '5G'],
+        price: [10000000,15000000],
+    },
+    ram: {
+        rm: ['4GB','8GB','16GB'],
+        price: [10000000,15000000,20000000],
+    }
+
+}
+
+
+var checkBoxCamera = document.querySelectorAll('.selc input');
+var fieldSetCamera = document.querySelector('.sub-in4__list-detail li .camera');
+var checkBoxRam = document.querySelectorAll('.ram input');
+var fieldSetRam = document.querySelector('.sub-in4__list-detail li .ram');
+var checkBoxConnect = document.querySelectorAll('.connect input');
+var fieldSetConnect = document.querySelector('.sub-in4__list-detail li .connect');
+
+showValueChecked(fieldSetCamera, checkBoxCamera);
+showValueChecked(fieldSetRam, checkBoxRam);
+showValueChecked(fieldSetConnect, checkBoxConnect);
+
+function showValueChecked (field, checkBoxItems){
+    for(var i = 0; i< checkBoxItems.length; i++){
+        checkBoxItems[i].onclick = function(e){
+            var value = e.target.value;
+            field.innerHTML = value;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var payField = document.querySelector('.sub-in4__wrap');
+var buyButton = payField.querySelector('.sub-in4__btn .sw2dz');
+var infoPhone = payField.querySelector('.sub-in4__title');
+buyButton.onclick = function(e){
+    e.preventDefault();
+    var struct = getStruct(e, infoPhone);
+    var modal = createModal(struct);
+    document.querySelector('body').appendChild(modal);
+    var statusNote = document.querySelector('.status b');
+    var bg = document.querySelector('.bg1');
+    bg.classList.add('show');
+    setTimeout(() => {
+       statusNote.classList.add('animate__pulse');
+       statusNote.style.color = "#00d400";
+    }, 500);
+    activeButton(modal);
+    
+}
+
+
+function getStruct(e, infoPhone){
+    var name = infoPhone.querySelector('h3').innerHTML;
+    var ram = infoPhone.querySelector('ul li span.ram').innerHTML;
+    var camera = infoPhone.querySelector('ul li span.camera').innerHTML;
+    var connect = infoPhone.querySelector('ul li span.connect').innerHTML;
+    var price = document.getElementById('wq').innerHTML;
+    var time = new Date();
+    var day = time.getDate();
+    var month = time.getMonth();
+    var year = time.getFullYear();
+    var hour = time.getHours();
+    var minutes = time.getMinutes();
+    return {
+        Phone:name,
+        Ram:ram,
+        Camera:camera,
+        Connect: connect,
+        Price: price,
+        Time:{
+            d: day,
+            m: month,
+            y: year,
+            t: {
+                h: hour,
+                m: minutes,
+            }
+        },
+    };
+
+}
+
+function createModal(struct){
+    var div = document.createElement('div');
+    div.classList.add('pay-modal');
+    div.innerHTML = 
+                    `<nav class="pd-navbar">
                     <h1 class="title">Tóm tắt đơn hàng</h1>
                     <h1 class="btn">Trở lại</h1>
                 </nav>
@@ -49,10 +207,31 @@ function createModal(struct){var div=document.createElement('div');div.classList
                             </div>
                         </div>
                     </div>
-                    </section>`;return div}
-function activeButton(modal){var confirm=document.querySelector('.pm-cta button');var cancel=document.querySelector('.btn');confirm.onclick=function(){modal.remove();var thisShow=createLoadingModal();document.querySelector('body').appendChild(thisShow);document.querySelector('.overlay1').classList.add('open');setTimeout(()=>{thisShow.remove();document.querySelector('.overlay1').classList.remove('open')},8500)}
-cancel.onclick=function(){modal.remove()}}
-function createLoadingModal(){var div=document.createElement('div');div.classList.add('loading-payment-modal');div.innerHTML=`<h1>Tiến hành thanh toán</h1>
+                    </section>`;
+    return div;
+}
+function activeButton(modal){
+    var confirm = document.querySelector('.pm-cta button');
+    var cancel = document.querySelector('.btn');
+    confirm.onclick = function(){
+        modal.remove();
+        var thisShow = createLoadingModal();
+        document.querySelector('body').appendChild(thisShow);
+        document.querySelector('.overlay1').classList.add('open');
+        setTimeout(() => {
+            thisShow.remove();
+            document.querySelector('.overlay1').classList.remove('open');
+        }, 8500);
+    }
+    cancel.onclick = function(){
+        modal.remove();
+    }
+}
+function createLoadingModal(){
+    var div = document.createElement('div');
+    div.classList.add('loading-payment-modal');
+    div.innerHTML = 
+                    `<h1>Tiến hành thanh toán</h1>
                     <div class="lpm__img">
                         <svg width="320" height="291" viewBox="0 0 320 291" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="Frame 95" clip-path="url(#clip0)">
@@ -400,16 +579,128 @@ function createLoadingModal(){var div=document.createElement('div');div.classLis
                             </clipPath>
                             </defs>
                             </svg>                 
-                    </div>`;return div}
-var trollImg=document.querySelector('.img1');trollImg.onclick=function(e){e.preventDefault();var overlay=document.querySelector('.overlay1')
-overlay.classList.add('open');setTimeout(()=>{trollModal()},500)};function trollModal(){var thisModal=createTrollModal();document.querySelector('body').appendChild(thisModal);sw(thisModal)}
-function createTrollModal(){var div=document.createElement('div');div.classList.add('pay-modal','tired-modal');div.innerHTML=`<h1 class="tired1 animate__animated"></h1>
+                    </div>`;
+    return div;
+}
+
+
+
+
+var trollImg = document.querySelector('.img1');
+trollImg.onclick = function(e){
+    e.preventDefault();
+    var overlay = document.querySelector('.overlay1')
+    overlay.classList.add('open');
+    setTimeout(() => {
+        trollModal(); 
+    }, 500);
+};
+function trollModal(){
+    var thisModal = createTrollModal();
+    document.querySelector('body').appendChild(thisModal);
+    sw(thisModal);
+    // var btn = document.querySelectorAll('.tired-cta button');
+    // for(var i = 0; i < btn.length; i++){
+    // btn[i].onclick = function(){
+    //     thisModal.remove();
+    // }
+}
+function createTrollModal(){
+    var div = document.createElement('div');
+    div.classList.add('pay-modal','tired-modal');
+    div.innerHTML = 
+    `<h1 class="tired1 animate__animated"></h1>
     <h1 class="tired2 animate__animated"></h1>
     <h1 class="tired3 animate__animated"></h1>
-    <div class="tired-cta animate__animated"></div>`;return div}
-function sw(thisModal){var text1="Sắp ra mắt";var i=0;var text2='Một Tin buồn !';var text3='Thằng viết ra tui nó hết pin rồi 😩';var thisW=document.querySelector('.tired1');var thisW2=document.querySelector('.tired2');var thisW3=document.querySelector('.tired3');var thisW4=document.querySelector('.tired-cta');function activeTypeWriter(){if(i<text1.length){thisW.innerHTML+=text1.charAt(i);i++;setTimeout(activeTypeWriter,200)}else{setTimeout(()=>{thisW.classList.add('animate__fadeOutUp');thisW.style.display="none"},1000);setTimeout(()=>{thisW2.innerHTML=text2;thisW2.classList.add('animate__zoomIn','animate__faster')},2000);setTimeout(()=>{thisW2.classList.add('animate__fadeOutUp');thisW2.style.display="none"},4000);setTimeout(()=>{thisW3.classList.add('animate__rubberBand');thisW3.innerHTML=text3},5000);setTimeout(()=>{thisW4.classList.add('animate__fadeInUp');thisW4.innerHTML=`<button class="like"><span>Like</span><i class="far fa-thumbs-up"></i></button>
-                                    <button class="dislike"><span>Dislike</span><i class="far fa-thumbs-down"></i></button>`;activeThisButton(thisModal)},6000)}}
-activeTypeWriter()}
-function activeThisButton(thisModal){function likeButton(){var like=document.querySelector('.like');like.onclick=function(){var icon=like.querySelector('i');icon.className='fas fa-thumbs-up';setTimeout(()=>{thisModal.remove();overlay.classList.remove('open')},1000)}}
-function disLikeButton(){var dislike=document.querySelector('.dislike');dislike.onclick=function(){var icon2=dislike.querySelector('i');icon2.className='fas fa-thumbs-down';setTimeout(()=>{thisModal.remove();overlay.classList.remove('open')},1000)}}
-likeButton();disLikeButton()}
+    <div class="tired-cta animate__animated"></div>`;
+    return div;
+}
+
+
+function sw(thisModal){
+    var text1 = "Sắp ra mắt";
+    var i = 0;
+    var text2 = 'Một Tin buồn !';
+    var text3 = 'Thằng viết ra tui nó hết pin rồi 😩';
+    var thisW = document.querySelector('.tired1');
+    var thisW2 = document.querySelector('.tired2');
+    var thisW3 = document.querySelector('.tired3');
+    var thisW4 = document.querySelector('.tired-cta');
+    function activeTypeWriter(){
+        if(i < text1.length) {
+            thisW.innerHTML += text1.charAt(i);
+            i++;
+            setTimeout(activeTypeWriter, 200);
+        }else{
+            setTimeout(() => {
+                thisW.classList.add('animate__fadeOutUp'); 
+                thisW.style.display = "none";
+            }, 1000);
+            setTimeout(() => {
+                thisW2.innerHTML = text2; 
+                thisW2.classList.add('animate__zoomIn', 'animate__faster');
+            },2000);
+            setTimeout(() => {
+                thisW2.classList.add('animate__fadeOutUp'); 
+                thisW2.style.display = "none";
+            }, 4000);
+            setTimeout(() => {
+                thisW3.classList.add('animate__rubberBand');
+                thisW3.innerHTML = text3; 
+            }, 5000);
+            setTimeout(() => {
+                thisW4.classList.add('animate__fadeInUp');
+                thisW4.innerHTML = `<button class="like"><span>Like</span><i class="far fa-thumbs-up"></i></button>
+                                    <button class="dislike"><span>Dislike</span><i class="far fa-thumbs-down"></i></button>`;
+                activeThisButton(thisModal);
+            }, 6000);
+        }
+    }                                               
+    activeTypeWriter();
+
+}
+function activeThisButton(thisModal){
+
+    function likeButton(){
+        var like = document.querySelector('.like');
+        like.onclick = function(){
+            // var smallModal = createThis1();
+            var icon = like.querySelector('i');
+            icon.className = 'fas fa-thumbs-up';
+           setTimeout(() => {
+            thisModal.remove();
+            overlay.classList.remove('open')
+           }, 1000);
+        }
+    }
+    function disLikeButton(){
+        var dislike = document.querySelector('.dislike');
+
+        dislike.onclick = function(){
+            // var smallModal = createThis2();
+            var icon2 = dislike.querySelector('i');
+            icon2.className = 'fas fa-thumbs-down';
+            setTimeout(() => {
+                thisModal.remove();
+                overlay.classList.remove('open')
+            }, 1000);
+        }
+    }
+
+    likeButton();
+    disLikeButton();
+
+
+                // function createThis1(){
+                //     var div = document.createElement('div');
+                //     div.classList.add('plus')
+                //     div.innerHTML = 
+                //                     `<h1></h1>`;
+                // }
+                // function createThis2(){
+                //     var div = document.createElement('div');
+                //     div.classList.add('minus');
+                // }
+}
+    // <i class="fas fa-thumbs-down"></i>
+   

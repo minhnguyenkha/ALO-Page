@@ -55,18 +55,11 @@ setTimeout(() => {
                 contentPhone.classList.add('wow', `${animated2}`, 'animate__fadeInUp');
                 
                 showBigNewsPhone();
+    
                 bigNewsPhone.addEventListener('animationend', function(){
-                            textThinner.classList.remove('hide');
-                            textThinner.classList.add('wow', `${animated2}`, 'animate__fadeInUp');
-                            textSmaller.classList.remove('hide');
-                            textSmaller.classList.add('wow', `${animated2}`, 'animate__fadeInUp', 'animate__delay-1s');
-                            textLighter.classList.remove('hide');
-                            textLighter.classList.add('wow', `${animated2}`, 'animate__fadeInUp', 'animate__delay-1s');  
-                    
-                    
-//                     showThinner();
-//                     showSmaller();
-//                     showLighter();
+                    showThinner();
+                    showSmaller();
+                    showLighter();
                     
                     textLighter.addEventListener('animationend', function(){
                         
@@ -151,30 +144,30 @@ function showBigNewsPhone(){
 }
 function hideBigNewsPhone(){
     bigNewsPhone.style.visibility = 'hidden'; 
-    bigNewsPhone.classList.add('wow', `${animated2}`, 'animate__fadeOutRightBig', 'animate__fast');
+    bigNewsPhone.classList.add('wow', `${animated2}`, 'animate__fadeOutRight', 'animate__faster');
 }
 function showThinner(){
     textThinner.style.visibility = "visible";
     textThinner.classList.add('wow', `${animated2}`, 'animate__fadeInUp');
 }
 function hideThinner(){
-    textThinner.classList.add('wow', `${animated2}`, 'animate__fadeOutLeftBig');
+    textThinner.classList.add('wow', `${animated2}`, 'animate__fadeOutLeft', 'animate__faster');
     textThinner.addEventListener('animationend', function(){textThinner.style.visibility = 'hidden';})
 }
 function showSmaller(){  
     textSmaller.style.visibility = "visible";
-    textSmaller.classList.add('wow', `${animated2}`, 'animate__fadeInUp', 'animate__delay-1s');
+    textSmaller.classList.add('wow', `${animated2}`, 'animate__fadeInUp');
 }
 function hideSmaller(){
-    textSmaller.classList.add('wow', `${animated2}`, 'animate__fadeOutLeftBig');
+    textSmaller.classList.add('wow', `${animated2}`, 'animate__fadeOutLeft', 'animate__faster');
     textSmaller.addEventListener('animationend', function(){textSmaller.style.visibility = 'hidden'; })
 }
 function showLighter(){
     textLighter.style.visibility = "visible";
-    textLighter.classList.add('wow', `${animated2}`, 'animate__fadeInUp', 'animate__delay-1s');  
+    textLighter.classList.add('wow', `${animated2}`, 'animate__fadeInUp', 'animate__slow');  
 }
 function hideLighter(){     
-    textLighter.classList.add('wow', `${animated2}`, 'animate__fadeOutLeftBig');
+    textLighter.classList.add('wow', `${animated2}`, 'animate__fadeOutLeft', 'animate__faster');
     textLighter.addEventListener('animationend', function(){
         textLighter.style.visibility = 'hidden';
     })

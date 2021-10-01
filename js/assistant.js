@@ -1,9 +1,15 @@
+
+
+
+
+
 var xBTn = document.querySelector('.assistant-wrap .assistant i');
+
 xBTn.addEventListener('click', hideAssistant);
 setTimeout(() => {
     showAssistant(); 
     showTextModal();
-}, 1000);
+}, 3000);
 
 
 function showTextModal(){
@@ -14,7 +20,7 @@ function showTextModal(){
 </div>
 <p>
     Đừng bỏ lỡ ưu đãi hấp dẫn nhất
-                    Nhận tư vấn ngay!</p>`;
+    Nhận tư vấn ngay!</p>`;
     document.querySelector('body').appendChild(modal);
     document.querySelector('.ms-icon').addEventListener('click', function(){
         modal.remove();
@@ -77,29 +83,29 @@ var botBtn = document.querySelectorAll('.ass-bot__content__btn');
 var botBtnLength = botBtn.length;
 
 /*declare*/
-    const botButtonWrap = document.createElement('div');
+    var botButtonWrap = document.createElement('div');
     botButtonWrap.classList.add(`assistant-bot__content__btn`);
-    const chatBotContent = document.querySelector('.chatbox__content');
-    const assistantContentWrap = document.createElement('div');
+    var chatBotContent = document.querySelector('.chatbox__content');
+    var assistantContentWrap = document.createElement('div');
         assistantContentWrap.classList.add(`assistant-bot__wrap`);
-    const assistantContent = document.createElement('div');
+    var assistantContent = document.createElement('div');
         assistantContent.classList.add(`assistant-bot`);
-    const assistantMessageContent = document.createElement('div');
+    var assistantMessageContent = document.createElement('div');
         assistantMessageContent.classList.add( `assistant-bot__content__wrap`);
-    const assistantIconContent = document.createElement('div');
+    var assistantIconContent = document.createElement('div');
         assistantIconContent.classList.add( `assistant-bot__icon__wrap`);
-    const iconContent = document.createElement('div');
+    var iconContent = document.createElement('div');
         iconContent.classList.add(`bot-icon`);
-    const icon = document.createElement('i');
+    var icon = document.createElement('i');
         icon.classList.add(`fa`, `fa-user`);
-    const Message = document.createElement('div');
+    var Message = document.createElement('div');
         Message.classList.add(`assistant-bot__content`);
-    const messageContent = document.createElement('div');
+    var messageContent = document.createElement('div');
         messageContent.classList.add(`assistant-bot__content__text`);
-    const currentTime = document.createElement('span');
+    var currentTime = document.createElement('span');
         currentTime.classList.add(`current__time`);
         setTime(currentTime);
-    const para = document.createElement('p');
+    var para = document.createElement('p');
 
 
 const botChatting = function(){
@@ -115,8 +121,8 @@ const botChatting = function(){
 
     function botCLickBtn(allBtn){
         var btnLength = allBtn.length;
-        for(let s = 0; s < btnLength; s++){
-            allBtn[s].addEventListener('click', e =>{
+        for(var s = 0; s < btnLength; s++){
+            allBtn[s].addEventListener('click', function(e){
                 userBotShow(e);
                 ownBotShow(e);
             })
@@ -161,25 +167,26 @@ const botChatting = function(){
     function ownBotShow(e){
         var contentLength = e.target.attributes.length;
         var content = e.target.attributes;
-    
-        var attr;
         /*to create button*/
-        for(let c = 0; c < contentLength; c++){
-            attr = content[c];
-            var zxc;
-            if(checkDataAttr(attr.nodeName)){
+        var attr; /*to get text by emma*/
+
+
+        /*Case: fix '+=' button when click*/
+        
+        for(var c = 0; c < contentLength; c++){
+            if(checkDataAttr(content[c].nodeName)){
+                attr = content[c];
                 var botBtn = document.createElement('a');
-                botBtn.classList.add(`ass-bot__content__btn`, 'this-button');
-                botBtn.innerHTML = `${attr.value}`;
-                zxc = botBtn;
-                botButtonWrap.appendChild(zxc);
+                botBtn.classList.add(`ass-bot__content__btn`, `this-button`);
+                botBtn.innerHTML = `${content[c].value}`;
+                botButtonWrap.appendChild(botBtn);
             }
         }
     
     
-    
-        var at = attr.value;
-        var texT = text(at, para);
+        
+        var textButton = attr.value;
+        var texT = text(textButton, para);
         para.innerHTML = texT.innerText;
         messageContent.innerHTML = para.outerHTML;
         iconContent.innerHTML = icon.outerHTML;
@@ -284,16 +291,16 @@ const botChatting = function(){
             switch(name){
                 case 'Sản phẩm mới nhất':
                 case 'Xem tất cả sản phẩm':
-                    para.innerHTML += `Emma gợi ý bạn hai lựa chọn !`;
+                    para.innerHTML = `Emma gợi ý bạn hai lựa chọn !`;
                     return para;
                     break;
                 case 'So sánh các sản phẩm':
                 case 'Xem sản phẩm mới nhất':
-                    para.innerHTML += `Emma đề xuất bạn !`;
+                    para.innerHTML = `Emma đề xuất bạn !`;
                     return para;
                     break;
                 case 'Ai biết':
-                    para.innerHTML += `Emma đang lớn !`;
+                    para.innerHTML = `Emma đang lớn !`;
                     return para;
                     break;
                 default:
