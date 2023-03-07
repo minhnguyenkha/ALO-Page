@@ -1572,6 +1572,8 @@ input[type="checkbox"].slogan__checkbox-label-input.hide:checked:before{
     background: #ffeac1;
     z-index: 5;
     animation: moveInRight 1 .3s linear;
+    display: none;
+    
 } .message-md p {color: #333;}
 
 .ms-icon{
