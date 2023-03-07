@@ -1,0 +1,3 @@
+
+
+new assistant().init();

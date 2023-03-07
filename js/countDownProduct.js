@@ -2,7 +2,7 @@
 
 
 
-var countDownDate = new Date("Oct 1, 2021 14:15").getTime();
+var countDownDate = new Date("Sep 30, 2021 18:35:00").getTime();
 var modalField = 
 document.querySelector('.cd__modal');
 

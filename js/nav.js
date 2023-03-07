@@ -7,7 +7,7 @@ var navBar = document.querySelector('header');
 
 
 function changeNameNav(){
-    let currentLocation = location.href.split('/')[4]; /*4*/
+    let currentLocation = location.href.split('/')[3]; /*4*/
     let listLink = ['index.html','index2.html','index3.html','index4.html','index5.html','index6.html'];
     let navBarProducts = document.querySelector('.nav__bar');
     let navListProducts = document.querySelectorAll('.nav__list');
@@ -38,7 +38,7 @@ function changeNameNav(){
 }
 changeNameNav();
 function changeNameProductsList(){
-    let currentLocation = location.href.split('/')[4];
+    let currentLocation = location.href.split('/')[3];
     let listProducts = ['index2-phone1.html','index2-phone2.html','index2-phone3.html','index2-phone4.html','index2-phone5.html','index2-phone6.html'];
     for(let j = 0; j < listProducts.length; j++){
         if(currentLocation === listProducts[j]){

@@ -237,7 +237,7 @@ img{
 
 
 .chatbox::-webkit-scrollbar{
-    display: none;
+   width: 0;
 }
 .date {text-align: center;margin-top: 2vw;}
 .chatbox__content{

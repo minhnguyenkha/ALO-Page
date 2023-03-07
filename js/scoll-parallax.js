@@ -144,30 +144,30 @@ function showBigNewsPhone(){
 }
 function hideBigNewsPhone(){
     bigNewsPhone.style.visibility = 'hidden'; 
-    bigNewsPhone.classList.add('wow', `${animated2}`, 'animate__fadeOutRight', 'animate__faster');
+    bigNewsPhone.classList.add('wow', `${animated2}`, 'animate__fadeOutRightBig', 'animate__fast');
 }
 function showThinner(){
     textThinner.style.visibility = "visible";
     textThinner.classList.add('wow', `${animated2}`, 'animate__fadeInUp');
 }
 function hideThinner(){
-    textThinner.classList.add('wow', `${animated2}`, 'animate__fadeOutLeft', 'animate__faster');
+    textThinner.classList.add('wow', `${animated2}`, 'animate__fadeOutLeftBig');
     textThinner.addEventListener('animationend', function(){textThinner.style.visibility = 'hidden';})
 }
 function showSmaller(){  
     textSmaller.style.visibility = "visible";
-    textSmaller.classList.add('wow', `${animated2}`, 'animate__fadeInUp');
+    textSmaller.classList.add('wow', `${animated2}`, 'animate__fadeInUp', 'animate__delay-1s');
 }
 function hideSmaller(){
-    textSmaller.classList.add('wow', `${animated2}`, 'animate__fadeOutLeft', 'animate__faster');
+    textSmaller.classList.add('wow', `${animated2}`, 'animate__fadeOutLeftBig');
     textSmaller.addEventListener('animationend', function(){textSmaller.style.visibility = 'hidden'; })
 }
 function showLighter(){
     textLighter.style.visibility = "visible";
-    textLighter.classList.add('wow', `${animated2}`, 'animate__fadeInUp', 'animate__slow');  
+    textLighter.classList.add('wow', `${animated2}`, 'animate__fadeInUp', 'animate__delay-1s');  
 }
 function hideLighter(){     
-    textLighter.classList.add('wow', `${animated2}`, 'animate__fadeOutLeft', 'animate__faster');
+    textLighter.classList.add('wow', `${animated2}`, 'animate__fadeOutLeftBig');
     textLighter.addEventListener('animationend', function(){
         textLighter.style.visibility = 'hidden';
     })

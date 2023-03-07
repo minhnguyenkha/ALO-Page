@@ -1,31 +1,14 @@
 
-
-
-
-
 var xBTn = document.querySelector('.assistant-wrap .assistant i');
 
 xBTn.addEventListener('click', hideAssistant);
 setTimeout(() => {
     showAssistant(); 
-    showTextModal();
-}, 3000);
+    // showTextModal();
+}, 1000);
 
 
-function showTextModal(){
-    var modal = document.createElement('div');
-    modal.classList.add('message-md');
-    modal.innerHTML = `<div class="ms-icon">
-    <i class="fa fa-times"></i>
-</div>
-<p>
-    Đừng bỏ lỡ ưu đãi hấp dẫn nhất
-    Nhận tư vấn ngay!</p>`;
-    document.querySelector('body').appendChild(modal);
-    document.querySelector('.ms-icon').addEventListener('click', function(){
-        modal.remove();
-    })
-}
+
 
 function hideAssistant(){
     var assistant = document.querySelector('.assistant-wrap');
@@ -107,6 +90,9 @@ var botBtnLength = botBtn.length;
         setTime(currentTime);
     var para = document.createElement('p');
 
+    var sum = Number.parseInt(500);
+    console.log(sum)
+    var frame = document.querySelector('.chatbox__content');
 
 const botChatting = function(){
     var today = new Date();
@@ -117,7 +103,8 @@ const botChatting = function(){
     var spanTime = document.querySelector('.current__time');
     setTime(spanTime);
     showDate();
-
+    
+    var sum = 0;
 
     function botCLickBtn(allBtn){
         var btnLength = allBtn.length;
@@ -125,6 +112,17 @@ const botChatting = function(){
             allBtn[s].addEventListener('click', function(e){
                 userBotShow(e);
                 ownBotShow(e);
+                var botFrame = document.querySelector('.assistant-bot__wrap');
+                var userFrame = document.querySelector('.assistant-user__wrap');
+
+                var chatBox = document.querySelector('.chatbox');
+                chatBox.scrollTo({
+                    top: sum += chatBox.scrollHeight,
+                    behavior: 'smooth'
+                })
+
+                for(let i = 0; i < botBtn.length; i++) botBtn[i].setAttribute("disable", "")
+
             })
         }
     }
@@ -140,7 +138,8 @@ const botChatting = function(){
         var time = `${today.getHours()}g:${today.getMinutes()}p`;
         var showText = createText(time, contentText);
         divWrap.appendChild(showText);
-        chatBotContent.appendChild(divWrap);
+        chatBotContent.appendChild(divWrap)
+        
     }
     
         function createText(time, content){
@@ -168,7 +167,7 @@ const botChatting = function(){
         var contentLength = e.target.attributes.length;
         var content = e.target.attributes;
         /*to create button*/
-        var attr; /*to get text by emma*/
+        var attr=0; /*to get text by emma*/
 
 
         /*Case: fix '+=' button when click*/
@@ -178,7 +177,8 @@ const botChatting = function(){
                 attr = content[c];
                 var botBtn = document.createElement('a');
                 botBtn.classList.add(`ass-bot__content__btn`, `this-button`);
-                botBtn.innerHTML = `${content[c].value}`;
+                botBtn.innerHTML = `${attr.value}`;
+                var x = botButtonWrap.outerHTML;
                 botButtonWrap.appendChild(botBtn);
             }
         }
@@ -196,11 +196,17 @@ const botChatting = function(){
         assistantContent.innerHTML = assistantIconContent.outerHTML + assistantMessageContent.outerHTML;
         assistantContentWrap.innerHTML = assistantContent.outerHTML;
     
-    
-    
+        
+        var a = assistantContentWrap.outerHTML;
+
+        
+        // chatBotContent.appendChild(a);
+
         chatBotContent.insertAdjacentHTML('beforeend', assistantContentWrap.outerHTML);
         // chatBotContent.appendChild(assistantContentWrap);
         
+        botButtonWrap.innerHTML = "";
+
         activeButtonCTA(contentText);
 
 
@@ -255,6 +261,7 @@ const botChatting = function(){
                     var showText = createOwnText(time);
                     divWrap.appendChild(showText);
                     chatBotContent.appendChild(divWrap);
+                    frame.scrollHeight += sum;
                 }
                 function createOwnText(time){
                     var newDiv = document.createElement('div');
@@ -312,4 +319,6 @@ const botChatting = function(){
 
 
 botChatting();
+
+
 

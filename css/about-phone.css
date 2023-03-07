@@ -25,7 +25,6 @@ body{
 header.about-phone__header{
     background: rgba(0, 0, 0, 0.5);
     padding: 15px 0;
-    z-index: 500000000000000;
 }
 .about-phone__header *{color: #fff;}
 .about-phone__nav{
@@ -151,8 +150,6 @@ header.about-phone__header{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    position: relative;
-    z-index: 1;
 }
 .bns__text{
     flex:.65;
@@ -187,7 +184,7 @@ header.about-phone__header{
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    top:450px;
+    top:300px;
 }
 .bns__inch-text{
     margin-bottom: 1rem;

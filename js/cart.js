@@ -1298,7 +1298,7 @@ const Cart = function(){
                 var node = document.createElement('div');
                 node.classList.add('detail__phone');
                 node.innerHTML = 
-                `<div class="detail__phone-wrap">
+                `<div class="detail__phone-wrap">   
                 <div class="phone__in4-part">
                     <div class="in4-part__img">
                         <img src="${img}" alt="">
